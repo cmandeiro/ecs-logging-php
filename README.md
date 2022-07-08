@@ -12,7 +12,7 @@ See the [PHP ECS logging documentation](https://www.elastic.co/guide/en/ecs-logg
 
 ## Install
 ```
-composer require elastic/ecs-logging
+composer require cmandeiro/ecs-logging
 ```
 
 ## Examples and Usage
