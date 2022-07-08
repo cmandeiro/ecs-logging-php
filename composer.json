@@ -1,5 +1,5 @@
 {
-    "name": "elastic/ecs-logging",
+    "name": "cmandeiro/ecs-logging",
     "description": "Format and enrich your log files in the elastic common schema",
     "keywords": ["log", "logging", "psr-3", "ecs", "elastic", "filebeat"],
     "homepage": "https://www.elastic.co/guide/en/ecs/",
@@ -17,9 +17,9 @@
         }
     ],
     "require": {
-        "php": "^7.2||^8.0",
-        "psr/log": "^1.0.1",
-	    "ext-json": "*"
+        "php": ">=7.2*",
+        "psr/log": ">=1.0.1",
+	"ext-json": "*"
     },
     "require-dev": {
         "php-parallel-lint/php-parallel-lint": "^1.3.0",
