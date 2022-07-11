@@ -10,6 +10,7 @@ namespace Elastic\Monolog\Formatter;
 
 use Elastic\Types\Error as EcsError;
 use Monolog\Formatter\NormalizerFormatter;
+use AG\ElasticApmLaravel\Facades\ApmAgent;
 use Throwable;
 
 /**
@@ -119,6 +120,15 @@ class ElasticCommonSchemaFormatter extends NormalizerFormatter
             $outRecord += $inRecord['context']['user']['Elastic\Types\User'];
             unset($inRecord['context']['user']);
         }
+
+        // Add Transaction Context
+        if (isset($inRecord['transaction'])) {
+            $outRecord["transaction"] = $inRecord['transaction'];
+        }
+        if (isset($inRecord['trace'])) {
+            $outRecord["trace"] = $inRecord['trace'];
+        }
+
 
         $this->formatContext($inRecord['extra'], /* ref */ $outRecord);
         $this->formatContext($inRecord['context'], /* ref */ $outRecord);
